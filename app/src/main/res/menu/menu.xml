@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+
+    <item
+        android:id="@+id/filtre_date"
+        android:title="Filtrer par date "
+        android:checked="true"
+
+        />
+
+    <item
+        android:id="@+id/filtre_heure"
+        android:title="Filtrer par lieu "
+        />
+
+</group>
+
+    <item
+        android:id="@+id/listeReunion"
+        android:title="Liste des réunions  "
+        />
+
+    </menu>
+
