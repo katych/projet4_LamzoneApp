@@ -42,5 +42,5 @@ Lamzone est une application de gestion de réunions, Maréu, utilisable en inter
 
 ## Démarrage :
 
-*Utiliser un émulateur ou télephone.
-*Cliquer sur Run .
+* Utiliser un émulateur ou télephone.
+* Cliquer sur Run .
