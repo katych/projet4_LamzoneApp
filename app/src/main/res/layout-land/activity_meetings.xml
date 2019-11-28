@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".UI.ActivityMeetingsList">
+    tools:context=".UI.ActivityMeetingsList"
+    android:orientation="vertical">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,6 @@
         tools:context=".UI.ActivityMeetings"
 
         >
-
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"

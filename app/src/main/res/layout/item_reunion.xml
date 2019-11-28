@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content" android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
 
 
@@ -53,9 +54,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="197dp"
-                android:layout_marginRight="197dp"
+                android:layout_marginTop="-1dp"
+                android:layout_marginEnd="178dp"
+                android:layout_marginRight="178dp"
                 android:text="14h "
                 android:textSize="@dimen/text_size"
                 android:textStyle="bold" />
@@ -84,19 +85,19 @@
             android:layout_marginBottom="18dp"
             android:text="katy@lamzone.com" />
 
-        <ImageButton
-            android:id="@+id/btnDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="7dp"
-            android:layout_marginEnd="19dp"
-            android:layout_marginRight="19dp"
-            android:src="@drawable/ic_delete" />
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/ic_delete" />
 
-    </RelativeLayout>
+        </RelativeLayout>
 
 
 </androidx.cardview.widget.CardView>

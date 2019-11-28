@@ -5,7 +5,6 @@
     <item
         android:id="@+id/filtre_date"
         android:title="Filtrer par date "
-        android:checked="true"
 
         />
 
