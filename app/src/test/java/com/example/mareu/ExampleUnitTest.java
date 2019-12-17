@@ -4,11 +4,9 @@ package com.example.mareu;
 import com.example.mareu.UI.ActivityMeetingsList;
 import com.example.mareu.di.DI;
 import com.example.mareu.model.Meeting;
-import com.example.mareu.services.DummyMeetingApiService;
 import com.example.mareu.services.MeetingApiService;
 import com.example.mareu.services.MeetingGenerator;
 import com.example.mareu.services.RoomGenerator;
-
 import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.junit.Before;
 import org.junit.Test;

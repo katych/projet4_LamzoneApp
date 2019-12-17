@@ -27,6 +27,8 @@ import com.example.mareu.model.Room;
 import com.example.mareu.services.DummyMeetingApiService;
 import com.example.mareu.services.MeetingApiService;
 import com.example.mareu.services.RoomGenerator;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Calendar;
 import java.util.List;
@@ -35,6 +37,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static android.R.layout.simple_spinner_dropdown_item;
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class AddMeeting extends AppCompatActivity  {
 
@@ -58,11 +61,11 @@ private MeetingApiService mApiService ;
     @BindView(R.id.dateOfMeeting)
     TextView dateOfMeeting;
     @BindView(R.id.subject)
-    EditText subject;
+    TextInputEditText subject;
     @BindView(R.id.btn_add_meeting)
     Button btn_add_meeting;
     @BindView(R.id.text_add_mail)
-    EditText text_add_mail;
+    TextInputEditText text_add_mail;
     @BindView(R.id.btn_cancel)
     Button btn_cancel;
 
@@ -125,17 +128,24 @@ private MeetingApiService mApiService ;
             @Override
             public void onClick(View view) {
 
-                Meeting meeting = new Meeting(
-                        subject.getText().toString(),
-                        mRoom,
-                        timeOfMeeting.getText().toString(),
-                        dateOfMeeting.getText().toString(),
-                        text_add_mail.getText().toString()
-                        );
-                mApiService.addMeeting(meeting);
-                Intent intent = new Intent(AddMeeting.this,ActivityMeetingsList.class);
-                startActivity(intent);
+                if (subject.getText().toString().isEmpty() && text_add_mail.getText().toString().isEmpty()) {
 
+             Toast.makeText(getApplicationContext(),"Subject et Email Champs Obligatoir " , Toast.LENGTH_LONG).show();
+                }
+
+
+               else {
+                    Meeting meeting = new Meeting(
+                            subject.getText().toString(),
+                            mRoom,
+                            timeOfMeeting.getText().toString(),
+                            dateOfMeeting.getText().toString(),
+                            text_add_mail.getText().toString()
+                    );
+                    mApiService.addMeeting(meeting);
+                    Intent intent = new Intent(AddMeeting.this, ActivityMeetingsList.class);
+                    startActivity(intent);
+                }
             }
         });
 

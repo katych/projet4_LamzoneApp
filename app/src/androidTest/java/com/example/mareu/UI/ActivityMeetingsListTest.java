@@ -84,6 +84,19 @@ public class ActivityMeetingsListTest {
 
    }
 
+   // Cancel Button
+
+
+    @Test
+    public void cancel_button (){
+        onView(withId(R.id.meetings_list)).check(matches(isDisplayed()));
+        onView(withId(R.id.btnFab)).perform(click());
+        onView(withId(R.id.subject)).perform(replaceText("Test"));
+        onView(withId(R.id.text_add_mail)).perform(replaceText("Test "));
+        onView(withId(R.id.btn_cancel)).perform(click());
+
+    }
+
    }
 
 
