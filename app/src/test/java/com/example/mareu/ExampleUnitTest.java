@@ -12,12 +12,15 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.Collections;
 import java.util.List;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.number.OrderingComparison.lessThanOrEqualTo;
 import static org.junit.Assert.*;
 
 public class ExampleUnitTest {
 
 
-    private MeetingApiService service ;
+    private MeetingApiService service;
 
     @Before
     public void setup() {
@@ -39,7 +42,7 @@ public class ExampleUnitTest {
     @Test
     public void addMeetingWithSuccess() {
 
-        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Mer 20",
+        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Jan 2020",
                 "david@lamzone.com");
         service.addMeeting(meeting);
         assertTrue(service.getMeetingsList().contains(meeting));
@@ -57,19 +60,25 @@ public class ExampleUnitTest {
     @Test
     public void FilterRooms() {
 
-        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Mer 20",
+        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Fev 2020",
                 "david@lamzone.com ");
-        service.addMeeting(meeting);
-        Collections.sort(service.getMeetingsList(), new ActivityMeetingsList.ComparatorRooms());
+        List<Meeting> mMeetings = service.getMeetingsList();
+        mMeetings.add(meeting);
+        Collections.sort(mMeetings, new ActivityMeetingsList.ComparatorRooms());
+        assertThat(mMeetings.get(0).getmRoom().getmNameRoom(), is(lessThanOrEqualTo(mMeetings.get(1).getmRoom().getmNameRoom())));
     }
+
 
     @Test
     public void FilterDate() {
 
-        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Mer 20",
+        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Mar 20",
                 "david@lamzone.com ");
-        service.addMeeting(meeting);
-        Collections.sort(service.getMeetingsList(), new ActivityMeetingsList.ComparatorDate());
+        List<Meeting> mMeetings = service.getMeetingsList();
+        mMeetings.add(meeting);
+        Collections.sort(mMeetings, new ActivityMeetingsList.ComparatorDate());
+        assertThat(mMeetings.get(0).getmDate(), is(lessThanOrEqualTo(mMeetings.get(1).getmDate())));
     }
-
 }
+
+

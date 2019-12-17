@@ -131,6 +131,7 @@ public class ActivityMeetingsList  extends AppCompatActivity {
         initList();
 
     }
+
     public void dateFilter () {
 
         Collections.sort(mMeetings, new ComparatorDate());
