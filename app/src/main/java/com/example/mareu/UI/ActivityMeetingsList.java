@@ -145,7 +145,7 @@ public class ActivityMeetingsList  extends AppCompatActivity {
 
     }
 
-    public class ComparatorRooms implements java.util.Comparator<Meeting> {
+    public static class ComparatorRooms implements Comparator<Meeting> {
 
         @Override
         public int compare(Meeting meeting, Meeting t1) {
@@ -153,7 +153,7 @@ public class ActivityMeetingsList  extends AppCompatActivity {
         }
     }
 
-    public class ComparatorDate implements Comparator<Meeting>{
+    public static class ComparatorDate implements Comparator<Meeting>{
 
 
         @Override
