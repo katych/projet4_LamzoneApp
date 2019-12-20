@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--text_size-->
+    <dimen name="text_subject">16sp</dimen>
+    <dimen name="text_size">12sp</dimen>
+    <dimen name="text_min">10sp</dimen>
+    <dimen name="margin_normal">5dp</dimen>
+
+    <!--image_size-->
+
+    <dimen name="image_width">30dp</dimen>
+    <dimen name="image_height">30dp</dimen>
+    <dimen name="image_spinner">25dp</dimen>
+
+    <!--margin-->
+
+    <dimen name="margin">6dp</dimen>
+
+
+
+</resources>

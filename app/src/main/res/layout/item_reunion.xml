@@ -1,103 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+  >
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        >
 
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="80dp">
 
         <ImageView
             android:id="@+id/imageRoom"
-            android:layout_width="50dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/ic_room1"
-           />
-
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/Room_Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom|start"
-            android:layout_marginStart="3dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginBottom="18dp"
-            android:text="room1" />
+            android:textSize="@dimen/text_min"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="@id/imageRoom"
+            app:layout_constraintRight_toRightOf="@id/imageRoom"
+            app:layout_constraintTop_toBottomOf="@id/imageRoom"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Room 1" />
 
         <TextView
             android:id="@+id/subject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="59dp"
-            android:layout_marginLeft="59dp"
-            android:layout_marginTop="0dp"
+            android:layout_margin="@dimen/margin_normal"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
             android:text="Reunion 1"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_subject"
             android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/imageRoom"
+            app:layout_constraintTop_toTopOf="@+id/imageRoom" />
 
-            />
-
-            <TextView
-                android:id="@+id/hour"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="3dp"
-                android:layout_marginEnd="177dp"
-                android:layout_marginRight="177dp"
-                android:text="14h "
-                android:textSize="@dimen/text_size" />
-
-            <TextView
+        <TextView
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="88dp"
-            android:layout_marginRight="88dp"
-            android:text="Lundi 2,2019" />
+            android:layout_marginLeft="32dp"
+            android:text="Nov2,2019"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="@id/subject"
+            app:layout_constraintLeft_toRightOf="@+id/subject"
+            app:layout_constraintTop_toTopOf="@id/subject"
+
+            />
+
+        <TextView
+
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="10:00 AM  "
+            android:textSize="@dimen/text_size"
+            app:layout_constraintBottom_toBottomOf="@id/subject"
+            app:layout_constraintLeft_toRightOf="@+id/date"
+            app:layout_constraintTop_toTopOf="@id/subject"
+            />
 
         <TextView
             android:id="@+id/text_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="64dp"
-            android:layout_marginLeft="64dp"
-            android:layout_marginBottom="18dp"
-            android:text="katy@lamzone.com" />
+            android:text="katy@lamzone.com"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintLeft_toLeftOf="@+id/subject"
+            app:layout_constraintStart_toStartOf="@+id/subject"
+            app:layout_constraintTop_toBottomOf="@+id/subject" />
 
-            <ImageButton
-                android:id="@+id/btnDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="-4dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginRight="2dp"
-                android:src="@drawable/ic_delete"
-                android:background="@android:color/transparent"/>
+        <ImageButton
 
-        </RelativeLayout>
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
