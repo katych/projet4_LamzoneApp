@@ -12,10 +12,10 @@ import org.junit.Before;
 import org.junit.Test;
 import java.util.Collections;
 import java.util.List;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.number.OrderingComparison.lessThanOrEqualTo;
 import static org.junit.Assert.*;
+
 
 public class ExampleUnitTest {
 
@@ -49,6 +49,7 @@ public class ExampleUnitTest {
 
     }
 
+
     @Test
     public void deleteReunionWithSuccess() {
         Meeting meetingToDelete = service.getMeetingsList().get(0);
@@ -57,28 +58,37 @@ public class ExampleUnitTest {
     }
 
 
+
+
     @Test
     public void FilterRooms() {
-
-        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Fev 2020",
-                "david@lamzone.com ");
+        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Jan 2020",
+                "david@lamzone.com");
         List<Meeting> mMeetings = service.getMeetingsList();
         mMeetings.add(meeting);
         Collections.sort(mMeetings, new ActivityMeetingsList.ComparatorRooms());
-        assertThat(mMeetings.get(0).getmRoom().getmNameRoom(), is(lessThanOrEqualTo(mMeetings.get(1).getmRoom().getmNameRoom())));
+
+        for(int i =0 ; i < mMeetings.size()-1 ; i++) {
+            assertThat(mMeetings.get(i).getmRoom().getmNameRoom(), is(lessThanOrEqualTo(mMeetings.get(i+1).getmRoom().getmNameRoom())));
+        }
     }
 
 
     @Test
     public void FilterDate() {
-
-        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Mar 20",
-                "david@lamzone.com ");
+        Meeting meeting = new Meeting("Reunion 4 ", RoomGenerator.generateRooms().get(4), "09", "Jan 2020",
+                "david@lamzone.com");
         List<Meeting> mMeetings = service.getMeetingsList();
         mMeetings.add(meeting);
+
         Collections.sort(mMeetings, new ActivityMeetingsList.ComparatorDate());
-        assertThat(mMeetings.get(0).getmDate(), is(lessThanOrEqualTo(mMeetings.get(1).getmDate())));
+
+        for (int i = 0; i < mMeetings.size() - 1; i++) {
+
+            assertThat(mMeetings.get(i).getmDate(), is(lessThanOrEqualTo(mMeetings.get(i+1).getmDate())));
+        }
     }
+
 }
 
 
