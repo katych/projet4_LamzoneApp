@@ -91,7 +91,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -139,24 +139,29 @@
                 android:id="@+id/Rooms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="Numero de la salle :"
                 android:textSize="@dimen/text_size"
-                android:hint="Numero de la salle :" />
+                android:layout_margin="@dimen/margin"/>
 
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/spinnerSalle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
                 android:scrollbars="horizontal" />
+
             <Button
                 android:id="@+id/btn_add_meeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
                 android:text="ADD MEETING" />
 
             <Button
                 android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin"
                 android:text="CANCEL" />
 
         </LinearLayout>
