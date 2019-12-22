@@ -13,8 +13,6 @@ import androidx.annotation.Nullable;
 
 import com.example.mareu.R;
 import com.example.mareu.model.Room;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterSpinner extends ArrayAdapter <Room> {
