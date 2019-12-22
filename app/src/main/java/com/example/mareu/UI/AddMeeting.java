@@ -38,8 +38,6 @@ private AdapterSpinner mAdapterSpinner;
 private Room mRoom;
 private MeetingApiService mApiService ;
 
-
-
     @BindView(R.id.spinnerSalle)
     Spinner spinner ;
     @BindView(R.id.btn_back)
@@ -61,7 +59,6 @@ private MeetingApiService mApiService ;
     @BindView(R.id.btn_cancel)
     Button btn_cancel;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +66,6 @@ private MeetingApiService mApiService ;
         ButterKnife.bind(this);
 
         mApiService=DI.getMeetingApiService();
-
         mRoomList = DI.getMeetingApiService().getRooms();
 
         mAdapterSpinner = new AdapterSpinner(this, mRoomList);
@@ -153,7 +149,6 @@ private MeetingApiService mApiService ;
             }
         });
 
-
     }
 
     public void dateHandle() {
@@ -172,7 +167,6 @@ private MeetingApiService mApiService ;
                 dateOfMeeting.setText(dateString);
 
                 Calendar calendar1 = Calendar.getInstance();
-
                 calendar1.set(Calendar.YEAR, year);
                 calendar1.set(Calendar.MONTH, month);
                 calendar1.set(Calendar.DATE, date);
@@ -180,7 +174,6 @@ private MeetingApiService mApiService ;
                 CharSequence dateTexte = DateFormat.format("MMM d , yyyy", calendar1);
 
                 dateOfMeeting.setText(dateTexte);
-
             }
         }, YEAR, MONTH, DATE);
 

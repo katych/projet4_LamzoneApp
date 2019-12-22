@@ -19,14 +19,12 @@ import static org.junit.Assert.*;
 
 public class ExampleUnitTest {
 
-
     private MeetingApiService service;
 
     @Before
     public void setup() {
         service = DI.getNewInstanceApiService();
     }
-
 
     @Test
     public void getMeetingsList() {
@@ -35,9 +33,7 @@ public class ExampleUnitTest {
 
         List<Meeting> expectedMeetings = MeetingGenerator.meetingList;
         assertThat(mMeetings, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedMeetings.toArray()));
-
     }
-
 
     @Test
     public void addMeetingWithSuccess() {
@@ -49,16 +45,12 @@ public class ExampleUnitTest {
 
     }
 
-
     @Test
     public void deleteReunionWithSuccess() {
         Meeting meetingToDelete = service.getMeetingsList().get(0);
         service.deleteMeeting(meetingToDelete);
         assertFalse(service.getMeetingsList().contains(meetingToDelete));
     }
-
-
-
 
     @Test
     public void FilterRooms() {
@@ -72,7 +64,6 @@ public class ExampleUnitTest {
             assertThat(mMeetings.get(i).getmRoom().getmNameRoom(), is(lessThanOrEqualTo(mMeetings.get(i+1).getmRoom().getmNameRoom())));
         }
     }
-
 
     @Test
     public void FilterDate() {

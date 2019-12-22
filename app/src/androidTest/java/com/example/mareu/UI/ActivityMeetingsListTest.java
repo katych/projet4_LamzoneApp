@@ -30,7 +30,6 @@ public class ActivityMeetingsListTest {
      public ActivityTestRule<ActivityMeetingsList>mActivityTestRule =
             new ActivityTestRule<>(ActivityMeetingsList.class);
 
-
     @Before
     public void setUp() {
         mActivityMeetingsList = mActivityTestRule.getActivity();
@@ -38,31 +37,22 @@ public class ActivityMeetingsListTest {
     }
 
     // check Meeting list is not empty
-
-   @Test
-
+    @Test
     public void reunionList_shouldNotBeEmpty(){
 
         onView(withId(R.id.meetings_list))
                 .check(matches(hasMinimumChildCount(1)));
-
    }
 
     // click FAB to add a meeting
-
     @Test
-
     public void check_clickFab_button(){
 
         onView(withId(R.id.meetings_list)).check(matches(isDisplayed()));
         onView(withId(R.id.btnFab)).perform(click());
         onView(withId(R.id.create_meeting)).check(matches(isDisplayed()) );
-
     }
-
-
     // Check button add meeting
-
     @Test
     public void Check_button_add_meeting(){
         onView(withId(R.id.meetings_list)).check(matches(isDisplayed()));
@@ -73,10 +63,8 @@ public class ActivityMeetingsListTest {
         onView(withId(R.id.meetings_list)).check(RecyclerViewItemCountAssertion.withItemCount(ITEMS_COUNT +1 ));
     }
 
-
    // Delete meeting
-
-   @Test
+    @Test
    public void check_deleteAction() {
        onView(withId(R.id.meetings_list)).check(matches(isDisplayed()));
        onView(withId(R.id.meetings_list)).perform(RecyclerViewActions.actionOnItemAtPosition(0, new DeleteViewAction()));
@@ -85,8 +73,6 @@ public class ActivityMeetingsListTest {
    }
 
    // Cancel Button
-
-
     @Test
     public void cancel_button (){
         onView(withId(R.id.meetings_list)).check(matches(isDisplayed()));

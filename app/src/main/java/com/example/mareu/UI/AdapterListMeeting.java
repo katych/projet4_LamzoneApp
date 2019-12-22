@@ -23,9 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-
 public class AdapterListMeeting extends RecyclerView.Adapter <AdapterListMeeting.ViewHolder> {
-
     List<Meeting> mMeeting ;
 
     public AdapterListMeeting(List<Meeting> mMeeting) {
@@ -49,7 +47,6 @@ public class AdapterListMeeting extends RecyclerView.Adapter <AdapterListMeeting
         @BindView(R.id.text_email)
         TextView mEmail;
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ButterKnife.bind(this,itemView);
@@ -64,27 +61,25 @@ public class AdapterListMeeting extends RecyclerView.Adapter <AdapterListMeeting
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         Meeting meeting = mMeeting.get(position);
 
-       holder.subjectMeeting.setText(meeting.getmSubject());
-       holder.hourMeeting.setText(meeting.getmHour());
-       holder.nameRoom.setText(meeting.getmRoom().getmNameRoom());
-       holder.date.setText(meeting.getmDate());
-       holder.mEmail.setText(meeting.getmEmails());
-
+        holder.subjectMeeting.setText(meeting.getmSubject());
+        holder.hourMeeting.setText(meeting.getmHour());
+        holder.nameRoom.setText(meeting.getmRoom().getmNameRoom());
+        holder.date.setText(meeting.getmDate());
+        holder.mEmail.setText(meeting.getmEmails());
         Glide.with(holder.imageRoom.getContext())
                 .load(meeting.getmRoom().getmRoomColor())
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.imageRoom);
 
-       holder.btnDelete.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-               EventBus.getDefault().post(new DeleteMeetingEvent(meeting));
-           }
-       });
+                EventBus.getDefault().post(new DeleteMeetingEvent(meeting));
+            }
+        });
 
     }
 
