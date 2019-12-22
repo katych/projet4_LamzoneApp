@@ -13,7 +13,7 @@ Lamzone est une application de gestion de réunions, Maréu, utilisable en inter
 * Liste des réunions comprenant :
 * l’heure de la réunion .
 * le lieu de la réunion .
-*le sujet de la réunion .
+* le sujet de la réunion .
 * la liste des participants (adresses mail).
 * Ajout d’une réunion.
 * Suppression d’une réunion.
