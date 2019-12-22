@@ -31,6 +31,7 @@
                 android:id="@+id/subject"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:textSize="@dimen/text_subject"
                 android:hint="Subject"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -44,6 +45,7 @@
                 android:id="@+id/text_add_mail"
                 android:layout_width="283dp"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
                 android:hint="Email participants 3 max" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -68,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Les dates disponible :"
+            android:textSize="@dimen/text_size"
 
             />
 
@@ -95,7 +98,8 @@
                 android:id="@+id/text_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Réunion le : " />
+                android:hint="Réunion le : "
+                android:textSize="@dimen/text_size"/>
 
             <TextView
                 android:id="@+id/dateOfMeeting"
@@ -135,6 +139,7 @@
                 android:id="@+id/Rooms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size"
                 android:hint="Numero de la salle :" />
 
             <androidx.appcompat.widget.AppCompatSpinner
