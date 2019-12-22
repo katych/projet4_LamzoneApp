@@ -9,7 +9,7 @@ public class Room {
     public Room(String mNameRoom,int mRoomColor ) {
         this.mNameRoom = mNameRoom;
         this.mRoomColor = mRoomColor;
-        this.mOccupied = false;
+
     }
 
 
